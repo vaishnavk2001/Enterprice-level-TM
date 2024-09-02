@@ -19,8 +19,8 @@ export class UserComponent {
   // imagePath = computed(()=>'assets/users/'+this.selectUser().avatar)
 
 
-  @Input() avatar!:String;
-  @Input() name!:String;
+  @Input({required:true}) avatar!:String;
+  @Input({required:true}) name!:String;
 
   onSelectuser(){
   // const random = Math.floor(Math.random() *DUMMY_USERS.length)

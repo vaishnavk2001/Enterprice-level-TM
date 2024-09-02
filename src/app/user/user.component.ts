@@ -11,4 +11,9 @@ const random = Math.floor(Math.random() *DUMMY_USERS.length)
 })
 export class UserComponent {
  selectUser = DUMMY_USERS[random];
+ //using getters for avoid directly add complex logic in template directly
+ get imagePath(){
+  return "assets/users/" + this.selectUser.avatar
+ }
+
 }

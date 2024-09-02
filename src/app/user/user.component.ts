@@ -16,7 +16,8 @@ export class UserComponent {
   return "assets/users/" + this.selectUser.avatar
  }
  onSelectuser(){
-  console.log("event clicked ..!");
+  const random = Math.floor(Math.random() *DUMMY_USERS.length)
+  this.selectUser = DUMMY_USERS[random];
  }
 
 }

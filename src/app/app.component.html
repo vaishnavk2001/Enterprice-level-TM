@@ -1,9 +1,12 @@
 <app-header/>               
 <main>
     <ul id="users">
-        <li><app-user  [avatar]="user[0].avatar" [name]="user[0].name" /></li>
-        <li><app-user [avatar]="user[1].avatar" [name]="user[1].name"/></li>
-        <li><app-user [avatar]="user[2].avatar" [name]="user[2].name"/></li>
-        <li><app-user [avatar]="user[3].avatar" [name]="user[3].name"/></li>
+        <li><app-user [avatar]="user[0].avatar" [name]="user[0].name" [id]="user[0].id"  (select)="onSelectUser($event)" /></li>
+        <li><app-user [avatar]="user[1].avatar" [name]="user[1].name" [id]="user[1].id" (select)="onSelectUser($event)" /></li>
+        <li><app-user [avatar]="user[2].avatar" [name]="user[2].name" [id]="user[2].id" (select)="onSelectUser($event)" /></li>
+        <li><app-user [avatar]="user[3].avatar" [name]="user[3].name" [id]="user[3].id" (select)="onSelectUser($event)" /></li>
+    </ul>
+    <ul>
+        <h2>Task Details side</h2>
     </ul>
 </main>

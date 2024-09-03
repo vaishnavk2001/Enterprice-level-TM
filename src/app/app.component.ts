@@ -14,5 +14,10 @@ import { DUMMY_USERS } from './Dummy-user';
 })
 export class AppComponent {
   title = 'project1';
+  to_ch !:string 
   user = DUMMY_USERS;
+  onSelectUser(id:string){
+    console.log("selected user:"+id);
+    this.to_ch = id
+  }
 }

@@ -4,7 +4,10 @@
         @for (item of user; track item.id) {
             <li><app-user [avatar]="item.avatar" [name]="item.name" [id]="item.id"  (select)="onSelectUser($event)" /></li>
         }
-        
     </ul>
-    <app-tasks [name]="SelectUser2.name" />
+    @if (selectedUser) {
+        <app-tasks [name]="SelectUser2.name" />
+    }@else {
+        <p>select a user to show details view</p>
+    }
 </main>

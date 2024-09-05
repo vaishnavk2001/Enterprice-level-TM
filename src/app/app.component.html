@@ -1,13 +1,16 @@
 <app-header/>               
 <main>
     <ul id="users">
-        @for (item of user; track item.id) {
-            <li><app-user [avatar]="item.avatar" [name]="item.name" [id]="item.id"  (select)="onSelectUser($event)" /></li>
-        }
+        <!-- @for (item of user; track item.id) { -->
+            <li><app-user *ngFor="let item of user" [avatar]="item.avatar" [name]="item.name" [id]="item.id"  (select)="onSelectUser($event)" /></li>
+        <!-- } -->
     </ul>
-    @if (selectedUser) {
-        <app-tasks [name]="SelectUser2.name" />
-    }@else {
-        <p>select a user to show details view</p>
-    }
+    <!-- @if (selectedUser) { -->
+        <app-tasks *ngIf="SelectUser2 ; else newvalue" [name]="SelectUser2.name" />
+    <!-- }@else { -->
+        <ng-template #newvalue>
+            <p>select a user to show details view</p>
+        </ng-template>
+    <!-- } -->
 </main>
+ 

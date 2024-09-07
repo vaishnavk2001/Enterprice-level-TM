@@ -6,17 +6,11 @@
         <button>Add New Task</button>
     </menu>
     <ul>
+        @for (item of selectUderId; track item.id) {
+        
         <li>
             <app-task/>
-        </li>
-        <li>
-            <app-task/>
-        </li>
-        <li>
-            <app-task/>
-        </li>
-        <li>
-            <app-task/>
-        </li>
+        </li>     
+        }
     </ul>
 </section>

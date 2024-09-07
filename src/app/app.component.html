@@ -6,11 +6,9 @@
         }
     </ul>
     @if (selectedUser) {
-        <app-tasks  [name]="SelectUser2.name" />
+        <app-tasks [userId]="SelectUser2.id"  [name]="SelectUser2.name" />
     }@else {
-        
-            <p>select a user to show details view</p>
-    
+        <p>select a user to show details view</p>
     }
 </main>
  

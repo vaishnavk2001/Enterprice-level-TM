@@ -1,12 +1,8 @@
 import { Component ,EventEmitter,Input,output,Output,signal} from '@angular/core';
 import { DUMMY_USERS } from '../Dummy-user';
-
+import { user } from './user.model';
 const random = Math.floor(Math.random() *DUMMY_USERS.length)
-interface user{
-  id:string;
-  avatar:String;
-  name:String;
-}
+
 @Component({
   selector: 'app-user',
   standalone: true,

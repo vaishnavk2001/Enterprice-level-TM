@@ -1,12 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { Task_array } from './task.model';
 
-interface Task_array {
-  id:String;
-  title:String;
-  summary:String;
-  dueDate:String;
-  userId:String;
-}
 @Component({
   selector: 'app-task',
   standalone: true,

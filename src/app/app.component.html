@@ -3,7 +3,7 @@
     <!-- RENDERING USER SIDE/USERS SHOWING -->
     <ul id="users">
         @for (item of user; track item.id) {
-            <li><app-user  [avatar]="item.avatar" [name]="item.name" [id]="item.id"  (select)="onSelectUser($event)" /></li>
+            <li><app-user  [user]="item"  (select)="onSelectUser($event)" /></li>
         }
     </ul>
     <!-- DETAIL SIDE  -->

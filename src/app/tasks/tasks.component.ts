@@ -20,6 +20,13 @@ export class TasksComponent {
       userId: 'u1',
     },
     {
+      id: 't1',
+      title: 'test2e',
+      summary: ' main homepage.',
+      dueDate: '2024-09-10',
+      userId: 'u1',
+    },
+    {
       id: 't2',
       title: 'Set up Database',
       summary: 'Initialize the database and set up tables for user tasks.',

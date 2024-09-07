@@ -9,7 +9,7 @@
         @for (item of selectUderId; track item.id) {
         
         <li>
-            <app-task/>
+            <app-task [task_data]="item" />
         </li>     
         }
     </ul>

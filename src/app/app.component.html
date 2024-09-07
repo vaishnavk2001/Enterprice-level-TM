@@ -1,10 +1,12 @@
 <app-header/>               
 <main>
+    <!-- RENDERING USER SIDE/USERS SHOWING -->
     <ul id="users">
         @for (item of user; track item.id) {
             <li><app-user  [avatar]="item.avatar" [name]="item.name" [id]="item.id"  (select)="onSelectUser($event)" /></li>
         }
     </ul>
+    <!-- DETAIL SIDE  -->
     @if (selectedUser) {
         <app-tasks [userId]="SelectUser2.id"  [name]="SelectUser2.name" />
     }@else {

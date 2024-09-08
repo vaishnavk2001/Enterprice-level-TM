@@ -3,7 +3,7 @@
     <!-- RENDERING USER SIDE/USERS SHOWING -->
     <ul id="users">
         @for (item of user; track item.id) {
-            <li><app-user  [user]="item"  (select)="onSelectUser($event)" /></li>
+            <li><app-user  [user]="item" [selected]="item.id === selectedUser"  (select)="onSelectUser($event)" /></li>
         }
     </ul>
     <!-- DETAIL SIDE  -->
@@ -12,5 +12,5 @@
     }@else {
         <p>select a user to show details view</p>
     }
-</main>
+</main> 
  

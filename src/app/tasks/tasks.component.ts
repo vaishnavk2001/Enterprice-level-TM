@@ -66,7 +66,12 @@ export class TasksComponent {
   }
 
   Addtask(){
-    
+    this.show_add_task = true;
+  }
+  
+  //close add task
+  closeAddtask(){
+    this.show_add_task = false;
   }
 
 }

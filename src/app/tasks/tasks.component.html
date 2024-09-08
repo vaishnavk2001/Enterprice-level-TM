@@ -1,9 +1,12 @@
+@if (show_add_task) {
+    <app-add-task (close)="closeAddtask()"/>
+}
 <section id="tasks">
     <header>
         <h2>{{ name }}'s Tasks</h2>
     </header>
     <menu>
-        <button>Add New Task</button>
+        <button (click)="Addtask()">Add New Task</button>
     </menu>
     <ul>
         @for (item of selectUderId; track item.id) {

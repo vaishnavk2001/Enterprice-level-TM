@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task_array } from './task.model';
 
 @Component({
@@ -12,5 +12,12 @@ import { Task_array } from './task.model';
 
 export class TaskComponent {
   @Input({required:true}) task_data!:Task_array;
+  //mark task as completed 
+  @Output() completed = new EventEmitter<String>();
+
+  onCompleted(){
+    this.completed.emit(this.task_data.id);
+  }
+
   
 }

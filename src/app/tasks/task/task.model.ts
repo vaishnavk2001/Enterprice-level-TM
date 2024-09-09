@@ -1,9 +1,9 @@
 export interface Task_array {
-  id:String;
-  title:String;
-  summary:String;
-  dueDate:String;
-  userId:String;
+  id:string;
+  title:string;
+  summary:string;
+  dueDate:string;
+  userId:string;
 }
 
 export interface taskModel {

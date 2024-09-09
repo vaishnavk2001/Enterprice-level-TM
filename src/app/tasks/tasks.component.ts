@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { TaskComponent } from './task/task.component';
 import { AddTaskComponent } from "./add-task/add-task.component";
+import { taskModel } from './task/task.model';
 
 @Component({
   selector: 'app-tasks',
@@ -10,7 +11,7 @@ import { AddTaskComponent } from "./add-task/add-task.component";
   styleUrl: './tasks.component.css',
 })
 export class TasksComponent {
-  @Input({ required: true }) userId!: String;
+  @Input({ required: true }) userId!: string;
   @Input({ required: true }) name!: String;
   show_add_task:boolean = false;
   tasks = [
@@ -73,5 +74,14 @@ export class TasksComponent {
   closeAddtask(){
     this.show_add_task = false;
   }
-
+  onAddtask(taskData:taskModel){
+    this.tasks.push({
+      id: new Date().getDate().toLocaleString(),
+      title:taskData.title,
+      summary:taskData.summary,
+      dueDate:taskData.duedate,
+      userId:this.userId
+    })
+    this.show_add_task = false; 
+  }
 }

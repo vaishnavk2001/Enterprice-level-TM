@@ -23,9 +23,5 @@ export class UserComponent {
   onSelectuser(){
     this.select.emit(this.user.id)
   }
-  
-
-
-  
 
 }

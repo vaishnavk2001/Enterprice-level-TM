@@ -5,3 +5,9 @@ export interface Task_array {
   dueDate:String;
   userId:String;
 }
+
+export interface taskModel {
+  title:string,
+  summary:string,
+  duedate:string
+}

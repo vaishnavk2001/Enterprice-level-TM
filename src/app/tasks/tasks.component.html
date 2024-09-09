@@ -1,5 +1,5 @@
 @if (show_add_task) {
-    <app-add-task (close)="closeAddtask()"/>
+    <app-add-task (close)="closeAddtask()" (add)="onAddtask($event)"/>
 }
 <section id="tasks">
     <header>

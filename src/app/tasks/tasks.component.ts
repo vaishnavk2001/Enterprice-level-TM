@@ -3,6 +3,7 @@ import { TaskComponent } from './task/task.component';
 import { AddTaskComponent } from "./add-task/add-task.component";
 import { taskModel } from './task/task.model';
 import { CardComponent } from "../shared/card/card.component";
+import { TasksService } from './tasks.service';
 
 @Component({
   selector: 'app-tasks',
@@ -13,58 +14,15 @@ import { CardComponent } from "../shared/card/card.component";
 })
 export class TasksComponent {
   @Input({ required: true }) userId!: string;
-  @Input({ required: true }) name!: String;
+  @Input({ required: true }) name!: string;
   show_add_task:boolean = false;
-  tasks = [
-    {
-      id: 't1',
-      title: 'Design Homepage',
-      summary: 'Create the layout and design for the main homepage.',
-      dueDate: '2024-09-10',
-      userId: 'u1',
-    },
-    {
-      id: 't1',
-      title: 'test2e',
-      summary: ' main homepage.',
-      dueDate: '2024-09-10',
-      userId: 'u1',
-    },
-    {
-      id: 't2',
-      title: 'Set up Database',
-      summary: 'Initialize the database and set up tables for user tasks.',
-      dueDate: '2024-09-12',
-      userId: 'u2',
-    },
-    {
-      id: 't3',
-      title: 'Implement Authentication',
-      summary: 'Add login and registration functionality using JWT.',
-      dueDate: '2024-09-15',
-      userId: 'u3',
-    },
-    {
-      id: 't4',
-      title: 'Create Task API',
-      summary: 'Build REST API for managing task CRUD operations.',
-      dueDate: '2024-09-18',
-      userId: 'u4',
-    },
-    {
-      id: 't5',
-      title: 'Add Task Filtering',
-      summary: 'Enable task filtering based on priority and status.',
-      dueDate: '2024-09-20',
-      userId: 'u5',
-    },
-  ];
+  constructor(private tsk:TasksService){}
   get selectUderId() {
-    return this.tasks.filter((user) => user.userId === this.userId);
+    return this.tsk.get_task_user(this.userId)
   }
 
-  completed_task(id:String){
-    this.tasks = this.tasks.filter((newone)=>newone.id !== id)
+  completed_task(id:string){
+   return this.tsk.remove_task(id)
   }
 
   Addtask(){
@@ -76,13 +34,7 @@ export class TasksComponent {
     this.show_add_task = false;
   }
   onAddtask(taskData:taskModel){
-    this.tasks.push({
-      id: new Date().getDate().toLocaleString(),
-      title:taskData.title,
-      summary:taskData.summary,
-      dueDate:taskData.duedate,
-      userId:this.userId
-    })
+    this.tsk.add_task(taskData,this.userId)
     this.show_add_task = false; 
   }
 }

@@ -14,7 +14,7 @@ import { DatePipe } from '@angular/common';
 export class TaskComponent {
   @Input({required:true}) task_data!:Task_array;
   //mark task as completed 
-  @Output() completed = new EventEmitter<String>();
+  @Output() completed = new EventEmitter<string>();
 
   onCompleted(){
     this.completed.emit(this.task_data.id);

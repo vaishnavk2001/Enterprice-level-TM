@@ -22,7 +22,7 @@ export class TasksComponent {
   }
 
   completed_task(id:string){
-   return this.tsk.remove_task(id)
+  //  return this.tsk.remove_task(id)
   }
 
   Addtask(){
